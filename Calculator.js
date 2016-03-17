@@ -69,6 +69,7 @@ $(document).ready(function(){
 function doIt(){
 	try{
 	var total = eval($('.screen').val());
+	console.log(screen.val);
 	} catch(e){
 		console.log(e);
 		if(e instanceof SyntaxError){
@@ -81,44 +82,24 @@ function doIt(){
 		}
 	}
 	$('.screen').val(total);
+	if(total == 311){
+		// $('#meaning').animate({left:'2000px'})
+		$('#meaning').addClass('move');
+	}
 };
 
-function number(){
-	var currScreenVal = $('.screen').val();
-	$('.1').click(function(){
-		$('.screen').val(currScreenVal + '1');
-	});
-	$('.2').click(function(){
-		$('.screen').val(currScreenVal + '2');
-	});
-	$('.3').click(function(){
-		$('.screen').val(currScreenVal + '3');
-	});
-	$('.4').click(function(){
-		$('.screen').val(currScreenVal + '4');
-	});
-	$('.5').click(function(){
-		$('.screen').val(currScreenVal + '5');
-	});
-	$('.6').click(function(){
-		$('.screen').val(currScreenVal + '6');
-	});
-	$('.7').click(function(){
-		$('.screen').val(currScreenVal + '7');
-	});
-	$('.8').click(function(){
-		$('.screen').val(currScreenVal + '8');
-	});
-	$('.9').click(function(){
-		$('.screen').val(currScreenVal + '9');
-	});
-	$('.0').click(function(){
-		$('.screen').val(currScreenVal + '0');
-	});
-	$('-').click(function(){
-		$('.screen').val(currScreenVal + '-');
-	});
-}
+$('.operator, .number').click(function(){
+		if($(this).hasClass('equal')){
+			doIt();
+		}else if($(this).hasClass('clear')){
+			$('.screen').val('');
+		}else{
+			var currScreenVal = $('.screen').val();
+			$('.screen').val(currScreenVal + $(this).val());
+		}
+        // var currScreenVal = $('.screen').val();
+        // $('.screen').val(currScreenVal + $(this).val());
+    });
 
 
 

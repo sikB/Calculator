@@ -23,7 +23,7 @@ body{
 	color: white;
 }
 
-.clear{
+.operator.clear{
 	background: #ff0066;
 	box-shadow: 0px 0px #ff7c87;
 	width: 50px;
@@ -46,7 +46,15 @@ body{
 	background-color: orange;
 	color: black;
 }
-
+#meaning{
+	position: absolute;
+	left: -1000px;
+	top: 50%;
+}
+#meaning.move{
+	left: 2000px;
+	transition: all 5s ease;
+}
 
 
 

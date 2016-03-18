@@ -50,12 +50,27 @@ body{
 	position: absolute;
 	left: -1000px;
 	top: 50%;
+	border-radius: 5%;
 }
 #meaning.move{
 	left: 2000px;
 	transition: all 5s ease;
+	transform: rotate(3600deg);
 }
-
+.row.scale{
+	transform:rotate(45deg);
+}
+.row.sixty{
+	transform:skew(60deg,60deg);
+}
+.row.rotate{
+	transform: rotate(1080deg);
+	transition: all .5s ease;
+}
+.number.ninety{
+	transform: rotate(1080deg);
+	transition: all .5s ease;
+}
 
 
 

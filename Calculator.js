@@ -1,7 +1,4 @@
 $(document).ready(function(){
-	// $('input').keyup(function(e){
-	// 	console.log(e);
-	// });
 
 	document.onkeyup = keyCheck;
 	function keyCheck(){
@@ -61,7 +58,6 @@ $(document).ready(function(){
 				doIt();
 			break;
 		}
-		// console.log(keyId);
 	}
 	
 });
@@ -85,6 +81,14 @@ function doIt(){
 	if(total == 311){
 		// $('#meaning').animate({left:'2000px'})
 		$('#meaning').addClass('move');
+	}else if(total == 45){
+		$('.row').addClass('scale');
+	}else if(total == 60){
+		$('.row').addClass('sixty');
+	}else if(total == 1800){
+		$('.row').addClass('rotate');
+	}else if(total == 90){
+		$('.number').addClass('ninety');
 	}
 };
 
@@ -93,6 +97,12 @@ $('.operator, .number').click(function(){
 			doIt();
 		}else if($(this).hasClass('clear')){
 			$('.screen').val('');
+			$('#meaning').removeClass('move');
+			$('.row').removeClass('scale');
+			$('.row').removeClass('sixty');
+			$('.row').removeClass('rotate');
+			$('.number').removeClass('ninety');
+
 		}else{
 			var currScreenVal = $('.screen').val();
 			$('.screen').val(currScreenVal + $(this).val());
